@@ -1,0 +1,32 @@
+<form class="form"  [formGroup]="formTarjeta" autocomplete="off"> 
+
+ <h1>Captura de tarjeta de crédito</h1>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre Completo.</mat-label>
+        <input type="text" onkeydown="return /[a-z, ]/i.test(event.key)" maxlength="50" formControlName="nombre"  matInput/>
+        <mat-error *ngIf="formTarjeta.invalid">{{getErrorFieldName()}} </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+        <mat-label>No Tarjeta de Credito.</mat-label>
+        <input    (keypress)="numberOnly($event);" type="text" maxlength="16" formControlName="plastico"  matInput/>
+        <mat-error *ngIf="formTarjeta.get('plastico')?.hasError('minlength')">El plastico es de 16 digitos</mat-error>
+        <mat-error *ngIf="formTarjeta.invalid">{{getErrorFieldPlastico()}} </mat-error>
+    </mat-form-field>
+
+    <!--  appMask [(ngModel)]="name1"  -->
+
+    <div>
+        <a mat-stroked-button (click)="cancel()" >Cancelar</a>
+        <button mat-flat-button (click)="saveChanges()" color="primary" [disabled]="formTarjeta.invalid">Guardar Cambios</button>
+        
+    </div>
+
+    <div>
+        <app-show-errores [errores]="errores"></app-show-errores>
+    </div> 
+</form>  
+
+
+
