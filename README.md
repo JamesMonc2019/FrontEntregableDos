@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
+# Para ejecutar el proyecto despues de clonar el repositorio.
+## Ejecute los siguientes comandos
+npm install
+ng serve -o     para visualizar la aplicacion en el navegador
+no olvide ejecutar el api que alimenta esta aplicación, se encuentra en el siguiente repositorio `https://github.com/JamesMonc2019/SeguridadFinalJM`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
